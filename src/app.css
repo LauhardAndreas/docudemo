@@ -1,0 +1,207 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  /*
+  font-weight: 400;
+  */
+  --color: rgb(223, 223, 223);
+  --background: #242424;
+  --code-box: #526264;
+  /* #f0821c */
+  --accent: #439CE6;
+  --accent2: #f0821c;
+
+  --content-width: 768px;
+  --side:1rem;
+
+  color-scheme: light dark;
+  color: var(--color);
+  background-color: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color);
+  background-color: var(--background);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+  /**
+   * calculate font-size based on the viewport width
+   * 
+   */
+}
+
+code[class*="language-"],
+code {
+  font-family: "Fira Code", monospace;
+  background: var(--code-box) !important;
+  box-shadow: var(--code-box) !important;
+  font-size: 0.9rem !important;
+  position: relative;
+
+}
+
+pre[class*="language-"] {
+  padding-top: 3.5em !important;
+  background: var(--code-box) !important;
+  border-radius: 0.5rem;
+  border-bottom: 0.5rem solid var(--accent2);
+  position: relative !important;
+
+}
+
+.copy-button-wrapper{
+  position: relative;
+  width: 100%;
+  height: 0px;
+}
+.copy-button {
+  position: absolute;
+  bottom:-3.8rem;
+  z-index: 100;
+  right:0;
+  margin: .5rem;
+}
+
+.language-description{
+  position: absolute;
+  bottom: -3rem;
+  z-index: 100;
+  background: var(--background);
+  padding: 0.2rem .8rem;
+  display: flex;
+  left: .6rem;
+  line-height: 1.5rem;
+  border-radius: .3rem;
+  color:var(--accent2);
+  font-weight: bold;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--accent2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: var(--accent);
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul,
+li > a {
+  text-transform: capitalize;
+  line-height: 2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: var(--side);
+  max-width: var(--content-width);
+}
+
+button {
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  padding: 0.5em 1.1em;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media screen and (max-width: 768px){
+  .show{
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: #213547;
+    --background: #ffffff;
+  }
+  a:hover {
+    color: var(--accent2);
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+  code[class*="language-"],
+  code {
+    font-family: "Fira Code", monospace;
+    background: var(--color) !important;
+    box-shadow: var(--color) !important;
+    font-size: 0.9rem !important;
+  }
+
+  pre[class*="language-"] {
+    background: var(--color) !important;
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid var(--accent2);
+  }
+}
